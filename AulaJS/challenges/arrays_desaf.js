@@ -51,3 +51,8 @@ const cadastro = [
 ]
 
 console.log(`O usuário ${cadastro[0].nome} tem ${cadastro[0].idade} e usa a tecnologia ${cadastro[0].tecnologia.join(' , ')}  com especialidade em ${cadastro[0].especialidade} \n`)
+
+for (let v of cadastro){
+    console.log(`${cadastro.nome} trabalha com ${cadastro.tecnologia}\n`)
+    
+    }
