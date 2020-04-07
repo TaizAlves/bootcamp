@@ -16,9 +16,7 @@ const usuarios = [
     }
   ];
 
-/*for (user of usuarios){
-    console.log(`${user.nome} , receita ${user.receitas} e despesas ${user.despesas}`)
-}*/
+
 
 function addnum(num){
     let soma = 0
