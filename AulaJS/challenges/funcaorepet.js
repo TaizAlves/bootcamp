@@ -8,13 +8,13 @@ const usuarios = [
     {
         nome: 'Jasmine',
         tecnologias: [
-            'CNode.js', 'JavaScript'
+            'Node.js', 'JavaScript','Python'
         ]
     },
     {
         nome: 'Taiz',
         tecnologias: [
-            'JavaScript', 'CSS'
+            'CSS','JavaScript'
         ]
     }
 ]
@@ -36,7 +36,12 @@ function checktec(user){
 
 for (let i = 0; i < usuarios.length; i++){
     const skillCSS = checktec(usuarios[i])
-    if (skillCSS){
-        console.log(`MATH!  ${usuarios[i].nome} trabalha com CSS`)
+
+    if (skillCSS == true)
+    {
+        console.log(`MATH! ${usuarios[i].nome} trabalha com CSS`)
+    }
+    else{
+        console.log(`${i} = ${usuarios[i].nome}- NÃO`)
     }
 }
