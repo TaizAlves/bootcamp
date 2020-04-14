@@ -1,0 +1,37 @@
+{% extends "layout.njk" %}
+
+{%block head%}  
+        
+<title>Sobre - Rocketset (launchbase) </title>
+        
+{%endblock%}
+
+{% block content%}
+
+    
+        <div id="wrapper">
+            <img src="{{about.logo}} "alt="Imagem de {{about.name}}">
+            <h1>{{about.name}}</h1>
+            <i>{{about.subtitle}}</i>
+            <p>{{about.info}}</p>
+        
+        </div>
+
+            <div class="list">
+                <h2>Principais tecnologias</h2>
+
+            {% for tec in about.tecnology %}
+                <ul style="list-style-type:circle;">
+                    <li>{{tec.name}}</li>
+                </ul> 
+            {% endfor %}
+            </div>
+        
+
+            <div class="links-footer">
+            {% for link in about.links %}
+                <a href="{{link.url}}" target="_blank">{{link.name}}</a>
+            {% endfor %}
+            </div>
+
+{% endblock %}
