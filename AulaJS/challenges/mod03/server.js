@@ -10,14 +10,35 @@ server.use(express.static("public"))
 server.set("view engine", "njk")
 
 nunjucks.configure("views", {
-    express:server
+    express:server,
+    autoescape: false, //para que a html dentro de uma variável funcione
+    noCache: true
 })
 
 
 server.get("/", function(req,  res){
-
+  
     return res.render("courses", {items:course})
 })
+
+
+server.get("/courses/:id", function(req,res){
+    const id = req.params.id
+    console.log("Será que cheguei aqui? ",id)
+
+    const page = course.find(function(page){
+        if (page.id == id){
+            return true
+        }
+    })
+    if (!course){
+        console.log("Não achei o course, vou redirecionar")
+        return res.render('not-found')
+    }
+    console.log("Achei o course: ", page)
+    return res.render("url", {ite:page})
+}) 
+
 
 server.get("/about", function(req, res){
     const about = {
