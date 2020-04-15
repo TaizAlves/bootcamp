@@ -233,7 +233,19 @@ iframe {
     padding: 30px;
     font-size: 24px;
     color: darkred;
-    
 
+}
 
+/* ==== URL ===== */
+
+.url {
+    background: white;
+    margin: 0 auto;
+    max-width: 950px;
+}
+
+.card-url {
+    position: relative;
+    padding-top: 68%;
+    background-color: white;
 }
