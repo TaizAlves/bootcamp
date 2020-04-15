@@ -12,7 +12,7 @@ rel="stylesheet">
 {% block content %}
         
        <div id="wrapper">
-            <h1>Aulas</h1>
+            <h1>Tecnologias</h1>
 
        </div>
 
@@ -21,7 +21,7 @@ rel="stylesheet">
             {% for item in items%}
 
             <div class="card" id = "{{item.id}}">
-                <div class="card_image-container {{'featured-wrapper' if items.featured }}">
+                <div class="card_image-container {{'featured-wrapper' if item.featured }}">
                     <img src="https://img.youtube.com/vi/{{item.id}}/0.jpg" alt="Imagem de {{item.title}}">
                 {% if item.featured %}
                     <div class="featured">Featured</div>
@@ -49,7 +49,6 @@ rel="stylesheet">
 
                <div class="modal-content">
                    <!--video aqui--> 
-                   <iframe src="" frameborder="0"></iframe>
 
 
                </div>
@@ -58,6 +57,6 @@ rel="stylesheet">
 
     
 
-       <script src="scripts.js"></script>
+       <script src="/scripts.js"></script>
 
        {% endblock %}
