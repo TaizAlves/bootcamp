@@ -40,7 +40,7 @@ server.get("/video", function(req,res){
     const id = req.query.id
 
     const video = videos.find(function(video){
-        if (videos.id == id) {
+        if (video.id == id) {
             return true
         }
     })
@@ -55,3 +55,4 @@ server.listen(5000, function()  {
     console.log("server is running")
 
 })
+
