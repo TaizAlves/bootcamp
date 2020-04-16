@@ -1,0 +1,52 @@
+{% extends "layout.njk" %}
+
+{%block head%}
+    <title>Receitas- Foodfy</title>
+{%endblock%}
+
+{%block content %}
+
+    <section class="mostly_access">
+
+        <div class="title">Mais Acessados</div>
+        
+        <div class="recipes">
+
+        {% for item in items %}
+        <div class="recipe" id = "burger.png">
+            <div class="img-recipe">  
+                <img src="{{item.image}}" alt="Imagem de {{item.title}}">
+            </div>
+            <div class="recipe-h2">
+                <h2>{{item.title}}Tr</h2>
+            </div>
+            <div class="recipe-p">
+                <p>por {{item.author}}</p>
+            </div>
+        </div>
+
+        {% endfor %}
+
+            
+    </div>
+    </section>
+
+
+    <div class="modal-over">
+        <div class="modal">
+           <div class="close-modal">
+            <a class="close-modal">fechar modal</a>
+           </div>
+
+            <div class="modal-content">
+                <img src="lasanha.png" alt="">
+                <h2></h2>
+                <p></p>
+
+            </div>
+        </div>
+    </div>
+
+<script src="scriptfoodfy.js"></script>
+
+{% endblock %}
