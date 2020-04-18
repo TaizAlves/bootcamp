@@ -4,80 +4,73 @@
     margin: 0;
     padding: 0;
     border: 0;
-}
-
-header {
-   /*  padding: 20px 30px 20px;verificar */
-   margin-top: 36px;
-   margin-bottom: 30px;
-    
-}
-
-.links {
-    text-align: left; /* verificar */
-    
-}
-
-.links img{
-    width: 90.6px;
-    height: 26.9px;
-    padding-right: 122.4px;
-
-}
-
-.links a {
-    font-family: 'Roboto', sans-serif;
-    color: #111111 ;
-    font-size: 16px;
-    padding: 30px;
-    line-height: 19px;
     text-decoration: none;
-    margin-top: 38px;
 }
 
-
-body {
+body{
+    background-color: white;
+    color: #111111;;
     font-family: 'Roboto', sans-serif;
-    color: #111111;
-    
+   
 }
 
-header,
-.wrapper ,
-.mostly_access,
-.content {
-    margin-left: 231px;
-    margin-right: 231px;
+.container{
+    width: 980px;
+    height: auto;
+    margin: auto;
 }
 
-.wrapper{
-    width: 940px;  
-    height: 366px;
-    background: #FBDFDB;
-    border-radius: 30px;
-    margin-top: 36px;   
-    
+header{
+    padding: 36px 0 30px 0;
+    display: grid;
+    grid-template-columns: 90.6px 1fr;
+    justify-content: center;
+    align-items: center;
 }
 
-.wrapper h1{
-    width: 50%;
-    height: 38px;
-    font-size: 32px;
-    line-height: 38px;
-    font-weight: bold;
-    padding: 117px 259px 10px 60px;
-    position: relative;
-
+header a{
+    font-size: 16px;
+    text-decoration: none;
+    color: #111;
+    margin: 30px;
 }
 
-.wrapper p {
-    padding:  10px 248px 117px 60px;
-    text-align: justify;
+header  a:hover {
     font-size: 18px;
-    line-height: 28px;
-    color: #000000;
-    opacity: 0.7;
+    transition: color 200ms;
+  }
+
+.links{
+    text-align: center;
 }
+
+header .logo {
+    height: 27px;
+  }
+
+.wrapper {
+    width: 940px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 20px;
+    background-color: #FBDFDB;
+}
+
+.wrapper-left{
+    margin: auto;
+    padding: 70px;
+    font-size: 18px
+}
+
+.wrapper-left h1 {
+    font-size: 32px;
+}
+
+.wrapper-right {
+    margin: auto;
+    padding-top: 6%;
+}
+
 
 .wrapper img{
     float: right;
@@ -88,49 +81,57 @@ header,
     padding-left: 248px;
 }
 
-.mostly_access{
-    
-    width: 940px;
-}
-.mostly_access .title {
+
+.wrapper-recipes h2 {
     font-weight: bold;
     margin-top: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 20px;  
     
 }
 
-.recipes {
+.recipes { 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px; 
     width: 940px;  
-    height: 366px;;
-   
-}
-.recipe {
-    margin: auto;
+    height: 366px;
     
 }
-.recipe-h2,
-.recipe-p {
+
+.recipes .recipe {
+    margin-top: 80px;
+    margin-bottom: 20px; 
+    
+}
+    
+.recipe:hover{
+    cursor: pointer;
+}
+.recipe-h2 h2,
+.recipe-h2 p {
     margin-top: 20px;
 
 }
 
-.recipe.img-recipe{
-    width: 100%;
+.img-recipe{
+    width: 300px;
+    height: 140px;
     border-radius: 15px;
-    
+ 
 }
 
 
+
 .recipe-h2{
+    margin-top: 10px;
+}
+.recipe-h2 h2{
     font-size: 18px;
     line-height: 21px;
     font-weight: normal;
 }
 
-.recipe-p {
+.recipe-h2 p {
     margin-top: 5px;
     color: #777777 ;
     font-size: 14px;
@@ -144,15 +145,11 @@ header,
     margin-top: 50px; 
     height: 62px;
     background-color: #EEEEEE;
-  
-     
-   
 }
-
 .footer p {
     padding: 23px;
-    
 }
+
 
 /* *** SOBRE ***** */
 
@@ -220,10 +217,7 @@ header,
 .modal-over.active{
     opacity: 1;
     visibility: visible;
-
 }
-
-
 
 
 .modal-content img{
@@ -248,3 +242,80 @@ header,
     color: #777777;
     text-align: center;
 }
+
+
+
+/* === DETALHE === */
+
+#recipe {
+    margin-top: 20px;
+  }
+  
+.recipe #card p {
+    text-align: center;
+  }
+  
+#card img {
+    border-radius: 30px 30px;
+  }
+  
+#card .recipe-h2 p {
+    font-size: 36px;
+    line-height: 46px;
+    font-weight: bold;
+  }
+  
+.recipe-p  p {
+    font-size: 22px;
+    line-height: 32px;
+    filter: brightness(80%);
+  }
+  
+#recipes #ingredients div,
+#recipes #preparation div,
+#recipes #information div {
+    display: flex;
+    margin: 20px 0px;
+  }
+.ingredient h2,
+.preparation h2,
+.information h2 {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  
+.recipe button {
+    margin: 10px 0px 0px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #999;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+.recipes button:hover {
+    color: rgb(226, 161, 64);
+    transition: color 200ms;
+  }
+  
+.content_detail hidden {
+    display: none !important;
+  }
+  
+.ingredient li,
+.preparation li {
+    list-style-position: inside;
+  }
+  
+.ingredient li,
+.preparation li,
+.information p {
+    font-size: 18px;
+    line-height: 28px;
+    color: #444;
+  }
+  
+.information p {
+    text-align: justify;
+  }
+
