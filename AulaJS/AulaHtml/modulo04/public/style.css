@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+:root {
+    --primary-color: #7159c1
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--primary-color);
+}
+
+header {
+    background-color: white;
+    width: 100%;
+    padding: 32px;
+    text-align: center;
+    box-sizing: border-box;  /*leva todo o conteudo até o limite do tamanho do conteudo width 100%   */
+}
+
+.links {
+    font-size: 22px;
+
+}
+
+.links a +a {
+    margin-left: 32px;
+    
+}
+
+.links a {
+    text-decoration: none;
+    color: #777;
+    position: relative;
+}
+
+.links a.actiive {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.links a:hover{
+    color: var(--primary-color);
+
+}
+
+
+.links a::after {
+    content: "";  /*sempre */
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+}
+
+
+/*- cria um elemento dentro de a - para poder ideia de esticar ( não pode ter underline em a  ) pois ele é essa linha  */
+.links a:hover::after{
+    width: 100%;
+    transition: width 200ms ease-in-out; /*está mudando o wight de a a 100% , em 200ms (tempo), ease-in-out (modo) e poderia colocar tb o tempor de delay por exemplo 1s  */
+
+}
+
+
