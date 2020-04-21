@@ -284,7 +284,7 @@ header .logo {
     line-height: 32px;
   }
   
-.recipe button {
+.recipe button.fat {
     margin: 10px 0px 0px 15px;
     font-size: 12px;
     font-weight: bold;
@@ -293,12 +293,12 @@ header .logo {
     cursor: pointer;
   }
   
-.recipes button:hover {
+.recipes button.fat:hover {
     color: rgb(226, 161, 64);
     transition: color 200ms;
   }
-  
-.content_detail hidden {
+
+#content_detail.hide {
     display: none !important;
   }
   
