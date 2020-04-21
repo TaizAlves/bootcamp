@@ -5,6 +5,8 @@ const routes = require("./routes") //usar o routes
 
 const server = express()
 
+server.use(express.urlencoded({extended:true}))  // faz funcionar o req.body lá do post em routes
+
 
 server.use(express.static('public'))
 server.use(routes)
