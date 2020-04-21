@@ -11,15 +11,21 @@ server.set("view engine", "njk")
 
 nunjucks.configure("views", {
     express:server,
-    autoescape: false
+    autoescape: false,
+    noCache: true
 })
 
 
 server.get("/", function(req,res){
+    let lastrceitas = []
+    for (let receita of receitas) {
+        if (lastrceitas.length < 4){
+            lastrceitas.push(receita)
+        }
+    }
         
-    return res.render("index", {items:receitas})
+    return res.render("index", {receitas:lastrceitas})
 })
-
 
 
 server.get("/receitas", function(req,res){
@@ -30,12 +36,15 @@ server.get("/sobre", function(req,res){
     return res.render("sobre")
 })
 
+
+
 server.get("/receitas/:index", function(req,res){
     const recipeIndex = req.params.index
     //console.log(receitas[recipeIndex])
     return res.render("detalhe", {item:receitas[recipeIndex]})
 
 })
+
 
 
 server.listen(5000, function(){
