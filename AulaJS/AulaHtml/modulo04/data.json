@@ -1,0 +1,22 @@
+{
+  "instructors": [
+    {
+      "avatar_url": "http://google.com",
+      "name": "Mozi",
+      "birth": 589075200000,
+      "gender": "M",
+      "services": "krav magá, meditação",
+      "created_at": 1587587792960,
+      "id": 1
+    },
+    {
+      "avatar_url": "http://google.com",
+      "birth": 915148800000,
+      "created_at": 1587588715513,
+      "id": 2,
+      "gender": "F",
+      "services": "balé, musculação",
+      "name": "Zee"
+    }
+  ]
+}
