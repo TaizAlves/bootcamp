@@ -1,0 +1,77 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<form class="card" method = "POST" action= "/teachers">
+
+    <section 
+    class="avatar"
+    style= "background: url(https://source.unsplash.com/collection/881463/500x500) no-repeat center center/cover"></section>
+
+    <section class="details">
+    <h3>Cadastro Professor</h3>
+
+    <div class="item">
+        <div>Avatar URL</div>
+        <div>
+        <input type="url" name="avatar_url"
+        placeholder= "http:// " >
+        </div>
+    </div>
+
+    <div class="item">
+        <div>Nome</div>
+        <div>
+        <input type="text" name="name" 
+        placeholder = "Nome completo">
+        </div>
+    </div>
+
+     <div class="item">
+        <div>Data de nascimento</div>
+        <div>
+        <input type="date" name="birth" >
+        </div>
+    </div>
+
+     <div class="item">
+        <div>Grau de escolaridade</div>
+        <select class = "custom" name="graduation" style="width:70%">
+        <option value="elementary">Ensino Médio Completo</option>
+        <option value="degree" selected>Ensino Superior Completo</option>
+        <option value="Master">Mestrado</option>
+        <option value="dr">Doutorado</option>
+        </select>
+    </div>
+
+     <div class="item">
+        <div>Tipo de Aula</div>
+        <div>
+        <span><input type="radio" name="location" value= "presencial" checked>Presencial</span>
+        <span><input type="radio" name="location" value= "à distância">À distância</span>
+        </div>
+    </div>
+
+     <div class="item">
+        <div>Acompanhamento</div>
+        <div>
+        <input type="text" name="subject" 
+        placeholder= "matemática, física, português, finanças">
+        
+        </div>
+    </div>
+
+    <button type="submit">Salvar</button>
+    
+    </section>
+
+
+
+
+
+
+</form>
+
+
+
+{% endblock content %}
