@@ -98,7 +98,7 @@ header {
 
 .details .item {
     border-top: 1px solid rgba(0, 0.1, 0, 0.1);
-    padding: 12px 0;
+    padding: 14px 0;
 
 }
 
@@ -132,4 +132,43 @@ header {
     font-size: 14px;
     color: white;
 
+}
+
+/* ******  FORM   **** */
+
+form input {
+    width: 90%;
+    outline: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.custom {
+    font-size: 18px;
+    color:#555;
+}
+
+input[type= "date"]{
+    font-size: 18px;
+    color: #555;
+    width: initial;
+}
+
+input[type="radio"]{
+    width: initial;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+button[type="submit"]{
+    padding: 8px 32px;
+    background-color: lawngreen;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 32px;
+    width: 90%;
+    
 }
