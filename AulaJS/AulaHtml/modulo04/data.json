@@ -15,8 +15,26 @@
       "created_at": 1587588715513,
       "id": 2,
       "gender": "F",
-      "services": "balé, musculação",
-      "name": "Zee"
+      "services": "balé, musculação, judô",
+      "name": "Zeegoti"
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://source.unsplash.com/collection/3465564/500x500",
+      "name": "Mozigotigo",
+      "gender": "M",
+      "birth": 468115200000,
+      "services": "musculação, crossfit",
+      "created_at": 1587652329819
+    },
+    {
+      "id": 4,
+      "avatar_url": "http://google.com",
+      "name": "Mozi",
+      "gender": "M",
+      "birth": 589075200000,
+      "services": "krav magá, meditação",
+      "created_at": 1587684135604
     }
   ]
 }
