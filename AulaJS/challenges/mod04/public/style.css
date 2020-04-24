@@ -90,7 +90,7 @@ header {
     font-weight: bold;
     color: darkolivegreen;
     text-align: center;
-    font-size: 20px;
+    font-size:18px;
     line-height: 30px;
     letter-spacing: 0.7px;
     
@@ -107,8 +107,8 @@ header {
 }
 
 .details .item div:nth-child(1){
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 14px;
+    line-height: 24px;
     color: #777;
     letter-spacing: 0.7px;
 }
@@ -116,7 +116,7 @@ header {
 .details .item div:nth-child(2){
     color: #555;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .details .item div:nth-child(2) span{
@@ -129,7 +129,7 @@ header {
     display: inline-block;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 12px;
     color: white;
 
 }
@@ -160,7 +160,7 @@ input[type="radio"]{
     margin-right: 8px;
     display: inline-block;
 }
-
+a.button,
 button[type="submit"]{
     padding: 8px 32px;
     background-color: lawngreen;
@@ -171,4 +171,11 @@ button[type="submit"]{
     margin-top: 32px;
     width: 90%;
     
+}
+
+a.button{
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
 }
