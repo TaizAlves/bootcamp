@@ -183,7 +183,7 @@ input::placeholder{
 a.button, 
 button[type="submit"]{
     padding: 8px 32px;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: white;
     border-radius: 4px;
     margin-top: 32px;
@@ -196,4 +196,12 @@ a.button {
     box-sizing: border-box;
     text-align: center;
     text-decoration: none;
+}
+
+#form-delete button[type="submit"]{
+    margin-top: 8px;
+    background-color: lightcoral;
+    
+
+
 }
