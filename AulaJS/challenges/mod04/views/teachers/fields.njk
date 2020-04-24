@@ -1,0 +1,65 @@
+<div class="item">
+        <div>Avatar URL</div>
+        <div>
+        <input type="url" name="avatar_url"
+        placeholder= "http:// " 
+        value = {{teacher.avatar_url}}>
+        </div>
+    </div>
+
+    <div class="item">
+        <div>Nome</div>
+        <div>
+        <input type="text" name="name" 
+        placeholder = "Nome completo"
+        value= "{{teacher.name}}">
+        </div>
+    </div>
+
+     <div class="item">
+        <div>Data de nascimento</div>
+        <div>
+        <input type="date" name="birth" 
+        value = "{{teacher.birth}}">
+        </div>
+    </div>
+
+     <div class="item">
+        <div>Grau de escolaridade</div>
+        <select class = "custom" name="graduation" style="width:70%">
+        <option value="elementary">{{teacher.graduation}}</option>
+        </select>
+    </div>
+
+     <div class="item">
+        <div>Tipo de Aula</div>
+        <div>
+
+        <span>
+        <input type="radio" name="location" value= "à distância"
+        {% if teacher.location == "à distância"%}
+        checked
+        {% endif%}
+        >à distância</span>
+
+        <span>
+        <input type="radio" name="location" value= "presencial"
+        {% if teacher.location == "presencial"%}
+        checked
+        {% endif%}
+        >presencial</span>
+
+        </div>
+    </div>
+
+     <div class="item">
+        <div>Área de atuação</div>
+        <div>
+        <input type="text" name="subject" 
+        placeholder= "matemática, física, português, finanças"
+        value = "{{teacher.subject}}">
+        
+        </div>
+    </div>
+
+    <button type="submit">Salvar</button>
