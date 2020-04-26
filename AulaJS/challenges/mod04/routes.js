@@ -35,4 +35,6 @@ routes.put('/teachers', teacher.put)
 
 routes.post("/teachers", teacher.post)
 
+routes.delete("/teachers", teacher.delete)
+
 module.exports = routes
