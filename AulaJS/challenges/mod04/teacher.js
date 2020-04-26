@@ -43,6 +43,8 @@ exports.show= function (req,res){
     return res.render("teachers/show", {teacher})
 }
 
+
+
 exports.edit = function(req,res){
     const {id} = req.params
     const foundTeacher = data.teachers.find(function(teacher){
@@ -70,7 +72,7 @@ exports.put = function(req,res){
 
     const foundTeacher = data.teachers.find(function(teacher, foundindex){
 
-        if (id==teacher.id){
+        if (id == teacher.id){
             index = foundindex
             return true
         }
@@ -83,13 +85,28 @@ exports.put = function(req,res){
         ...req.body
     }
 
-    data.teachers[index]=teacher
+    data.teachers[index] = teacher
 
     fs.writeFile("data.json", JSON.stringify(data,null,4), function(err){
         if (err) return res.send("Write error")
 
+        return res.redirect(`/teachers/${id}`)
     })
     
-    return res.redirect(`/teachers/${id}`)
+}
+
+
+exports.delete= function(req,res){
+    const{id}= req.body
+    const filterIdteacher = data.teachers.filter(function(teacher){
+        return teacher.id != id
+    })
+
+    data.teachers = filterIdteacher
+    fs.writeFile("data.json", JSON.stringify(data,null, 4), function(err){
+        if (err) return res.send("Write error")
+
+        return res.redirect("/teachers")
+    })
 
 }
