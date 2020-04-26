@@ -59,26 +59,6 @@
             "subject": "ciências, matemática, karatê",
             "created_at": 1587758468121,
             "id": 6
-        },
-        {
-            "avatar_url": "https://source.unsplash.com/collection/881463/500x500",
-            "name": "Mozigotigo",
-            "birth": "2000-08-02",
-            "graduation": "elementary",
-            "location": "presencial",
-            "subject": "ciências, matemática, karatê",
-            "created_at": 1587758518277,
-            "id": 7
-        },
-        {
-            "avatar_url": "https://source.unsplash.com/collection/881463/500x500",
-            "name": "Mozigotigo",
-            "birth": "2000-08-02",
-            "graduation": "elementary",
-            "location": "presencial",
-            "subject": "ciências, matemática, karatê",
-            "created_at": 1587758551119,
-            "id": 8
         }
     ]
 }
