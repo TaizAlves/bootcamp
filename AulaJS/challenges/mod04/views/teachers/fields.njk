@@ -27,8 +27,29 @@
      <div class="item">
         <div>Grau de escolaridade</div>
         <select class = "custom" name="graduation" style="width:70%">
-        <option value="elementary">{{teacher.graduation}}</option>
+        <option value="elementary"
+        {%if teacher.graduation == "elementary"%}
+
+        {%endif%}>Ensino Médio Completo</option>
+
+         <option value="degree"
+        {%if teacher.graduation == "degree"%}
+
+        {%endif%}>Ensino Superior Completo</option>
+
+          <option value="master"
+        {%if teacher.graduation == "master"%}
+
+        {%endif%}>Mestrado</option>
+
+          <option value="doctor"
+        {%if teacher.graduation == "doctor"%}
+
+        {%endif%}>Doutorado</option>
+        
         </select>
+
+        
     </div>
 
      <div class="item">
