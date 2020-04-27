@@ -2,6 +2,23 @@ const fs = require('fs')
 const data = require ('./data.json')
 const {age, graduation} = require('./utils')
 
+
+exports.index = function(req,res){
+
+    const teachers = data.teachers.map(function(teacher){
+        const spreadsubject = {
+            ...teacher,
+            subject: teacher.subject.split(',')
+        }
+        return spreadsubject
+
+    })
+
+
+    return res.render("teachers/index", {teachers})
+}
+
+
 exports.post = function(req, res) {
     const keys = Object.keys(req.body)
 
@@ -82,7 +99,8 @@ exports.put = function(req,res){
 
     const teacher ={
         ...foundTeacher,
-        ...req.body
+        ...req.body,
+        id:Number(req.body.id)
     }
 
     data.teachers[index] = teacher
