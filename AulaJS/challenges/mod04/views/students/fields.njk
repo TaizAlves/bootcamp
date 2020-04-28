@@ -1,0 +1,93 @@
+<div class="item">
+        <div>Avatar URL</div>
+        <div>
+        <input type="url" name="avatar_url"
+        placeholder= "http:// " 
+        value = {{student.avatar_url}}>
+        </div>
+    </div>
+
+    <div class="item">
+        <div>Nome</div>
+        <div>
+        <input type="text" name="name" 
+        placeholder = "Nome completo"
+        value= "{{student.name}}">
+        </div>
+    </div>
+
+      <div class="item">
+        <div>Email</div>
+        <div>
+        <input type="email" name="email" 
+        value= "{{student.email}}">
+        </div>
+    </div>
+
+     <div class="item">
+        <div>Data de nascimento</div>
+        <div>
+        <input type="date" name="birth" 
+        value = "{{student.birth}}">
+        </div>
+    </div>
+
+    <div class="item">
+      <div>Carga Horária Semanal</div>
+      <div>
+      <input type="number" name="carga" 
+      value= {{student.carga}}>
+      </div>
+    </div>
+
+     <div class="item">
+        <div>Ano Escolar</div>
+        <select class = "custom" name="grade" style="width:90%">
+        <option value="5ano"
+        {%if student.grade == "5ano"%}selected
+
+        {%endif%}>5º ano do ensino médio</option>
+
+         <option value="6ano"
+        {%if student.grade == "6ano"%}selected
+
+        {%endif%}>6º ano do ensino médio</option>
+
+          <option value="7ano"
+        {%if student.grade == "7ano"%}selected
+
+        {%endif%}>7º ano do ensino médio</option>
+
+          <option value="8ano"
+        {%if student.grade == "8ano"%}selected
+
+        {%endif%}>8º ano do ensino médio</option>
+
+         <option value="9ano"
+        {%if student.grade == "9ano"%}selected
+
+        {%endif%}>9º ano do ensino médio</option>
+
+         <option value="1colegial"
+        {%if student.grade == "1colegial"%}selected
+
+        {%endif%}>1º ano do colegial</option>
+
+         <option value="2colegial"
+        {%if student.grade == "2colegial"%}selected
+
+        {%endif%}>2º ano do colegial</option>
+
+         <option value="3colegial"
+        {%if student.grade == "3colegial"%}selected
+
+        {%endif%}>3º ano do colegial</option>
+        
+        </select>
+
+        
+    </div>
+
+     
+
+    <button type="submit">Salvar</button>
