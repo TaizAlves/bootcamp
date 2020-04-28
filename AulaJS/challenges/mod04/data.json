@@ -1,17 +1,28 @@
 {
+    "students": [
+        {
+            "avatar_url": "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+            "name": "Gloria Maria Fernandes",
+            "email": "gfern@gmail.com",
+            "birth": "2008-05-13",
+            "carga": "12",
+            "grade": "9ano",
+            "id": 1
+        }
+    ],
     "teachers": [
         {
-            "avatar_url": "https://source.unsplash.com/collection/881463/500x500",
-            "name": "Mozi",
+            "avatar_url": "https://images.unsplash.com/photo-1511629091441-ee46146481b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+            "name": "Mozi H. de Lima",
             "birth": "1990-09-12",
-            "graduation": "degree",
+            "graduation": "elementary",
             "location": "à distância",
             "subject": "português, geografia, inglês",
             "created_at": 1587748131886,
             "id": 1
         },
         {
-            "avatar_url": "http://aroma.com.br",
+            "avatar_url": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
             "name": "Lara",
             "birth": "1988-03-26",
             "graduation": "elementary",
@@ -21,44 +32,34 @@
             "id": 2
         },
         {
-            "avatar_url": "https://source.unsplash.com/collection/881463/500x500",
-            "name": "Mozigotigo",
-            "birth": "2000-08-02",
-            "graduation": "elementary",
-            "location": "presencial",
-            "subject": "ciências, matemática, karatê",
-            "created_at": 1587748131886,
-            "id": 3
-        },
-        {
             "avatar_url": "https://source.unsplash.com/collection/341191/500x500",
             "name": "Pablo Rodrigues Alves",
             "birth": "1979-12-11",
-            "graduation": "Master",
+            "graduation": "elementary",
             "location": "à distância",
-            "subject": "direito, português, legislação ambiental",
+            "subject": "direito, português, legislação ",
             "created_at": 1587749398365,
-            "id": 4
+            "id": 3
         },
         {
-            "avatar_url": "https://source.unsplash.com/collection/881463/500x500",
+            "avatar_url": "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
             "name": "Giovanna Paiva",
             "birth": "2008-08-08",
-            "graduation": "degree",
+            "graduation": "master",
             "location": "à distância",
             "subject": "flauta, yoga",
             "created_at": 1587749490462,
-            "id": 5
+            "id": 4
         },
         {
-            "avatar_url": "https://source.unsplash.com/collection/881463/500x500",
-            "name": "Mozigotigo",
-            "birth": "2000-08-02",
-            "graduation": "elementary",
+            "avatar_url": "https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+            "name": "Augusto Lima",
+            "birth": "2000-08-01",
+            "graduation": "doctor",
             "location": "presencial",
-            "subject": "ciências, matemática, karatê",
-            "created_at": 1587758468121,
-            "id": 6
+            "subject": "física, engenharia",
+            "created_at": 1588006028229,
+            "id": 5
         }
     ]
 }
