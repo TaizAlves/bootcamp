@@ -191,10 +191,17 @@ a.button{
 
 /* INDEX TABLE TEACHERS  */
 
+.card.table-container{
+    width: 52%;
+    margin-top: 80px ;
+
+}
+
 .table-container{
     display: block;
     padding: 40px;
     box-sizing: border-box;
+    
 }
 
 .table-container table{
@@ -216,6 +223,8 @@ tbody tr td:first-child{
     display: grid;
     grid-template-columns: 64px 1fr;
     align-items: center;
+    
+    
 }
 
 tbody tr td:first-child span{
@@ -235,7 +244,8 @@ th{
     font-size: 16px;
 }
 
-tbody tr td:last-child a {
+tbody tr td:last-child a ,
+.table-container > a{
     background-color: yellowgreen;
     padding: 8px 16px;
     text-decoration: none;
@@ -273,5 +283,10 @@ tbody tr  td.sub  span{
     margin-bottom: 4px;
     padding: 8px 16px;
    
+}
+
+.table-container > a{
+    margin-bottom: 12px;
+    display: inline-block;
 
 }
