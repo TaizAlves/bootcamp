@@ -1,15 +1,23 @@
-const {age, graduation, date} = require('../../lib/utils')
+const {age, gradeshow, date} = require('../../lib/utils')
 const db = require('../../config/db')
 
 module.exports= {
 
     all(callback){
-        db.query(`SELECT * FROM teachers
-        ORDER BY name ASC`, function(err,results){
-            if(err) throw `Database error. ${Error}`
+        db.query(`
+        SELECT teachers.*, count(students) AS total_students
+        FROM teachers
+        LEFT JOIN students ON (students.teacher_id = teachers.id)
+        GROUP BY teachers.id
+        ORDER BY total_students DESC`, function(err,results){
+            if(err) throw `Database error ${err}`
             callback(results.rows)
         })
+
     },
+
+
+    
 
     create(data,callback){
 
@@ -27,15 +35,16 @@ module.exports= {
     `
 
     const values = [
-        req.body.name,
-        req.body.avatar_url,
-        date(req.body.birth).iso,
-        req.body.graduation,
-        req.body.location,
-        req.body.subject,
+        data.name,
+        data.avatar_url,
+        date(data.birth).iso,
+        data.graduation,
+        data.location,
+        data.subject,
         date(Date.now()).iso
 
     ]
+
 
     
     db.query(query,values, function(err,results){
@@ -51,6 +60,21 @@ module.exports= {
             if(err) throw `Database error ${err}`
             callback(results.rows[0])
         })
+    },
+
+    findby(filter, callback){
+        db.query(`
+        SELECT teachers.*, count(students) AS total_students
+        FROM teachers
+        LEFT JOIN students ON (students.teacher_id = teachers.id)
+        WHERE teachers.name ILIKE '%${filter}%'
+        OR teachers.subject ILIKE '%${filter}%'
+        GROUP BY teachers.id
+        ORDER BY total_students DESC`, function(err,results){
+            if(err) throw `Database error ${err}`
+            callback(results.rows)
+        })
+
     },
 
     update(data,callback){
@@ -74,16 +98,16 @@ module.exports= {
             data.name,
             data.id
         ]
-
-        db.query(query,values,function(err,results){
-            if(err) throw `Database error. $(err)`
+        
+        db.query(query,values,function(err, results){
+            if(err) throw `Database error ${err}`
             callback()
         })
     },
 
     delete(id,callback){
-        db.query(`DELETE FROM teachers WHERE id = $!`, [id], function(err, results){
-            if(err) throw `Database error ${err}`
+        db.query(`DELETE FROM teachers WHERE id = $1`, [id], function(err, results){
+            if(err) throw `Database error `
 
             return callback()
         })
