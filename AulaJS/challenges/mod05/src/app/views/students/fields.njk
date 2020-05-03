@@ -27,21 +27,28 @@
      <div class="item">
         <div>Data de nascimento</div>
         <div>
-        <input type="date" name="birth" 
-        value = "{{student.birth}}">
+        <input 
+        type="date" 
+        name="birth" 
+        value = "{{student.birth}}"
+        >
         </div>
     </div>
 
     <div class="item">
       <div>Carga Horária Semanal</div>
       <div>
-      <input type="number" name="carga" 
-      value= {{student.carga}}>
+      <input 
+      type="number" 
+      name="hours" 
+      value = "{{student.hours}}">
+  
       </div>
     </div>
 
      <div class="item">
         <div>Ano Escolar</div>
+        <div>
         <select class = "custom" name="grade" style="width:90%">
         <option value="5ano"
         {%if student.grade == "5ano"%}selected
@@ -84,10 +91,23 @@
         {%endif%}>3º ano do colegial</option>
         
         </select>
-
-        
     </div>
+  </div>
 
+  <div class="item">
+      <div>Professor</div>
+      <div>
+        <select name="teacher" >
+        {%for teacher in teacherOptions%}
+          <option value="{{teacher.id}}"{%if student.teacher_id == teacher.id  %}selected {%endif%}>
+            {{teacher.name}}     
+          </option>     
+          {%endfor%} 
+        </select>
+          
+      </div>
+  
+  </div>
      
 
     <button type="submit">Salvar</button>
