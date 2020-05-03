@@ -4,8 +4,23 @@
 
 <div class="card table-container">
 
+    <div class="header">
+        <a class= "button" href="/teachers/create">Novo</a>
 
-<a href="/teachers/create">Novo</a>
+        <form action="/teachers" method="get">
+            <input type="text" 
+            name="filter" 
+            placeholder= "Nome ou Matéria"
+            value= {{filter}}
+            >
+            <button type="submit">Filtrar</button>
+        
+        </form>
+        
+    
+    </div>
+
+
 
     <table width="100%">
     
@@ -13,6 +28,7 @@
         <tr>
             <th>Nome completo</th>
             <th>Matéria</th>
+            <th>Alunos</th>
             <th>Ação</th>
         </tr>
     </thead>
@@ -24,16 +40,8 @@
         <span style= "background-image: url({{teacher.avatar_url}})"></span>
         {{teacher.name}}</td>
 
-        
-        
-        <td class= "sub"> 
-        {%for sub in teacher.subject%}
-        <span>{{sub}}</span>
-        {%endfor%}
-        </td>
-        
-    
-
+        <td >{{teacher.subject}}</td>
+        <td>{{teacher.total_students}}</td>
         <td><a href="/teachers/{{teacher.id}}">Ver</a></td>
     
     </tr>
