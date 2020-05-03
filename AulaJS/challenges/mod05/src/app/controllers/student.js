@@ -1,16 +1,29 @@
-const {age, graduation} = require('../../lib/utils')
-const db = require('../../config/db')
+const {date, gradeshow, age} = require('../../lib/utils')
+
+const Student = require('../models/studentdb')
 
 module.exports = {
 
 index(req,res){
+    Student.all(function(students){
 
-    return res.render("students/index", )
+        
+        
+    return res.render("students/index",{students})
+
+    })
+
+
 },
 
 
+
+
 create(req,res){
-    return res.render("students/create")
+
+    Student.teachersSelectOptions(function(options){
+        return res.render("students/create", {teacherOptions:options})
+    })
 },
 
 post(req, res) {
@@ -20,22 +33,45 @@ post(req, res) {
         if (req.body[key] == "")
         return res.send ("Please fill blanked fields")
     }
-
-  return
+    Student.create(req.body, function(student){
+        return res.redirect(`/students/${student.id}`)
+    })
+  
   
 },
 
 
+
 show(req,res){
+    Student.find(req.params.id, function(student){
+        if(!student) return res.send("Student not found !")
+
+        
+
+        student.grade= gradeshow(student.grade)
+        student.birth = date(student.birth).birthDay
+        
+        
+
+        return res.render("students/show", {student})
+    })
    
-    return 
 },
 
 
 
 edit(req,res){
-    
-    return 
+    Student.find(req.params.id, function(student){
+        if(!student) return res.send ("Student not found!")
+
+        student.birth=date(student.birth).iso
+
+        Student.teachersSelectOptions(function(options){
+            return res.render("students/edit",{student,teacherOptions:options})
+        })
+
+    })    
+ 
 },
 
 
@@ -48,13 +84,17 @@ put(req,res){
         if (req.body[key] == "")
         return res.send ("Please fill blanked fields")
     }
-    return
+    Student.update(req.body, function(){
+        return res.redirect(`/students/${req.body.id}`)
+    })
     
 },
 
 
 delete(req,res){
-  return
+  Student.delete(req.body.id, function(){
+      return res.redirect("/students")
+  })
 
 },
 
