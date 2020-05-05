@@ -113,5 +113,44 @@ module.exports= {
         })
     },
 
+    paginate(params){
+        const {filter, limit, offset, callback} = params
+
+        let query ="",
+            filterQuery= "",
+            totalQuery = `(SELECT count(*) FROM teachers) AS total`
+
+
+        if (filter) {
+            filterQuery= `
+            WHERE teachers.name ILIKE '%${filter}%'
+            OR teachers.subject ILIKE '%${filter}%'
+            `
+
+            totalQuery = `(
+                SELECT count(*) FROM teachers
+                ${filterQuery}
+            ) AS total
+            `
+        }
+
+        query = `
+        SELECT teachers.*, ${totalQuery}, count(students) AS total_students
+        FROM teachers
+        LEFT JOIN students ON (teachers.id = students.teacher_id)
+        ${filterQuery}
+        GROUP BY teachers.id 
+        ORDER BY name LIMIT $1 OFFSET $2  
+        `
+        const values= [limit, offset]
+        
+
+        db.query(query,values, function(err,results){
+            if (err) throw `Database error ${err}`
+            callback(results.rows)
+        })
+
+    },
+
     
 }
