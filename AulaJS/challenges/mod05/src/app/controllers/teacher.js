@@ -5,22 +5,29 @@ module.exports = {
 
     index(req,res){
 
-        const {filter} = req.query
-        
-        if(filter){
-            Teacher.findby(filter,function(teachers){
-                return res.render("teachers/index", {teachers, filter} )
+        let {filter, page, limit} = req.query
 
-            })
+        page = page || 1
+        limit = limit || 2
+        let offset = limit*(page -1)
 
-        } else{
-
-            Teacher.all(function(teachers) {
-    
-                return res.render("teachers/index", {teachers} )
-            })
+        const params ={
+            filter,
+            page,
+            limit,
+            offset,
+            callback(teachers){
+                const pagination ={
+                    total: Math.ceil(teachers[0].total / limit),
+                    page
+                    
+                }
+                
+                return res.render("teachers/index", {teachers,pagination, filter} )
+            }
         }
         
+        Teacher.paginate(params)
     },
 
 
