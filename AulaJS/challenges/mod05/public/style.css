@@ -329,3 +329,35 @@ tbody tr  td.sub  span{
     margin: 0;
 
 }
+
+
+/* PAGINATION    */
+
+.table-container{
+    display: grid;
+    grid-template: 64px 1fr 16px / 1fr;
+}
+
+.table-container .header {
+    margin: 0;
+    align-self: start;
+}
+
+.table-container .pagination{
+    margin: 0;
+    align-self: end;
+    justify-self: center;
+}
+
+.pagination a,
+.pagination span{
+    color: yellowgreen;
+    text-decoration: none;
+    margin-right: 8px;
+}
+
+.table-container .pagination a:hover{
+    filter: brightness(0.3);
+    border-bottom: 1px solid yellowgreen;
+
+}
