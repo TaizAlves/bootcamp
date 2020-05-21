@@ -4,16 +4,21 @@ module.exports = {
     date(timestamp){
         const date = new Date(timestamp)
 
-        const year = date.getUTCFullYear() // UTC para ser universal
+        const year = date.getFullYear() // UTC para ser universal
 
-        const month = `0${date.getUTCMonth() +1}`.slice(-2)// p.q é de 0 a 11
+        const month = `0${date.getMonth() +1}`.slice(-2)// p.q é de 0 a 11
 
-        const day = `0${date.getUTCDate()}`.slice(-2)
+        const day = `0${date.getDate()}`.slice(-2)
+
+        const hour = date.getHours()
+        const minute = date.getMinutes()
 
         return {
         day,
         month,
         year,
+        hour,
+        minute,
         iso:`${year}-${month}-${day}`,
         birthDay: `${day}/${month}`,
         format: `${day}/${month}/${year}`
