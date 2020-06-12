@@ -7,6 +7,11 @@ const session = require('./config/session')
 const server = express()
 
 server.use(session)
+server.use((req,res, next) => { //cria uma variável session global-(feito para usar no session.userId no header)
+    res.locals.session = req.session 
+    next()
+})
+
 server.use(express.urlencoded({extended:true}))  // faz funcionar o req.body lá do post em routes
 
 server.use(express.static('public'))
