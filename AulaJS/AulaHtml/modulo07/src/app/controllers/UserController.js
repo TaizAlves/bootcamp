@@ -1,6 +1,7 @@
 const User = require('../models/User')
 const { formatCep, formatCpfCnpj } = require('../../lib/utils')
 
+
 module.exports = {
 
     registerForm(req,res){
@@ -56,6 +57,27 @@ module.exports = {
             return res.render("user/index", {
                 user: req.body,
                 error: "Algum erro aconteceu"
+            })
+        }
+
+
+    },
+
+    async delete(req,res) {
+        try{
+
+            await User.delete(req.body.id)
+            req.session.destroy()
+
+            return res.render("session/login", {
+                success: "conta deletada com sucesso!"
+            })
+
+        }catch(err){
+            console.error(err)
+            return res.render("/user/index",{
+                user:req.body,
+                error: "Erro ao tentar deletar a conta"
             })
         }
 
