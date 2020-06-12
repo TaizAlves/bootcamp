@@ -55,7 +55,8 @@ async function post (req, res, next){
       if (password != passwordRepeat)
           return res.render('user/register', {
             user:req.body,
-            error:'A senha e a repetição da senha estão incorretas'})
+            error:'A senha e a repetição da senha estão incorretas'
+          })
   
           next()
       
