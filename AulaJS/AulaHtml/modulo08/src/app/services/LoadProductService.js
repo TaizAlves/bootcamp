@@ -13,7 +13,6 @@ async function getImages(productId){
  }
  
 
-
 async function format(product) {
     const files = await getImages(product.id)
     product.img = files[0].src
