@@ -15,7 +15,7 @@
             name="filter" 
             placeholder= "Buscar por Produtos"
                 {% if search.term %}
-                    value= {{search.term}}
+                    value= "{{search.term}}"
                 {%endif%}           
             >
     </form>
@@ -41,10 +41,7 @@
                     <a href="/users">Minha conta</a>
                 </li>
                 <li>
-                    <a href="/buying">Meus Pedidos</a>
-                </li>
-                <li>
-                    <a href="/selling">Minhas Vendas</a>
+                    <a href="/users/ads">Meus Anúncios</a>
                 </li>
                 <li>
                     <form action="/users/logout" method= "POST">
