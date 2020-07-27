@@ -39,7 +39,7 @@ module.exports = {
     async post(req,res){
 
         try {      
-            const { name, email, password, cpf_cnpj, ced, address } = req.body
+            const { name, email, password, cpf_cnpj, cep, address } = req.body
 
             // hash de senha-password- criptografia
             password = await hash(password, 8)
